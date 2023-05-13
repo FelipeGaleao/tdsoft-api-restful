@@ -53,6 +53,7 @@
         "parameters": [
           {
             "name": "repoId",
+            "description": "Id do repositório",
             "in": "path",
             "required": true,
             "type": "string"

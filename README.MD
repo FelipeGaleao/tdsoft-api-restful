@@ -38,3 +38,5 @@ O projeto foi desenvolvido utilizando a última imagem de [NodeJS](https://hub.d
 ```bash
 docker-compose up --build
 ```
+
+Para acessar a documentação do serviço, basta acessar o endereço [http://localhost:3000/docs](http://localhost:3000/docs) no navegador.
