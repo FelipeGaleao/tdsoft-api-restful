@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Aplicação REST API - TDSOFT 0.0.1",
+    "description": "O objetivo dessa aplicação é fornecer uma documentação integrada ao código fonte, para que seja possível visualizar os endpoints e seus respectivos parâmetros e respostas. \n "
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "tags": [
+    {
+      "name": "Repositórios",
+      "description": "Endpoints relacionados aos Repositórios"
+    }
+  ],
+  "paths": {
+    "/repos/find": {
+      "get": {
+        "tags": [
+          "Repositórios"
+        ],
+        "description": "Permite buscar repositórios cadastrados",
+        "parameters": [
+          {
+            "name": "nome",
+            "description": "Nome do repositório",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 - Retorna uma lista de repositórios encontrados"
+          },
+          "400": {
+            "description": "400 - Erro na requisição"
+          },
+          "404": {
+            "description": "404 - Repositório não encontrado"
+          }
+        }
+      }
+    },
+    "/repos/{repoId}": {
+      "get": {
+        "tags": [
+          "Repositórios"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "repoId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 - Retorna o repositório encontrado"
+          },
+          "404": {
+            "description": "404 - Repositório não encontrado"
+          }
+        }
+      }
+    }
+  }
+}
