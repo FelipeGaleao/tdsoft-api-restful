@@ -1,34 +1,15 @@
 const express = require('express')
+const bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
+const routes = require('./routes.js');
+
 const app = express()
 const port = process.env.PORT || 3000
-const unique_repository = require('./data/unique_repository.json')
 
-app.get('/repos/find', (req, res) => {
-  let nomeRepositorio = req.query.nome;
-  if (!nomeRepositorio) {
-    body = {
-      "mensagem": "Nome é obrigatório"
-    }
-    return res.status(400).send(body)
-  }
-  
-  body =  {
-    "id": "MDEwOlJlcG9zaXRvcnkxMDI3MDI1MA==",
-    "name": "facebook/react"
-  }
-  return res.status(200).send(body)
-  
-})
-
-app.get('/repos/:repoId', (req, res) => {
-  let idRepositorio = req.params.repoId;
-  if(idRepositorio){
-  body = unique_repository
-   return res.status(200).send(body)
-  }
-  return res.status(400).send({})
-})
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(require('./swagger_output.json')));
+app.use('/', routes);
 
 app.listen(port, () => {
   console.log(`Aplicação sendo executada na porta: ${port}`)
