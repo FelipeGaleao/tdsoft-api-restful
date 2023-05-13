@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0.0",
+    "version": "0.0.1",
     "title": "Aplicação REST API - TDSOFT 0.0.1",
     "description": "O objetivo dessa aplicação é fornecer uma documentação integrada ao código fonte, para que seja possível visualizar os endpoints e seus respectivos parâmetros e respostas. \n "
   },
