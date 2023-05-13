@@ -1,8 +1,10 @@
 # Criação de um Serviço RESTful
 
 ## Alunos
+
 - [Maycon Felipe Mota](https://github.com/felipegaleao)
 - [Vitor Oliveira](https://github.com/VitorORBrandao)
+
 ## 🎯 Objetivo
 
 O objetivo é colocar em prática os conhecimentos relacionados às definições de serviços web e suas aplicações.
@@ -40,6 +42,23 @@ O projeto foi desenvolvido utilizando a última imagem de [NodeJS](https://hub.d
 
 ```bash
 docker-compose up --build
+```
+
+Para executar os testes, basta executar o comando abaixo:
+
+```bash
+npm test
+```
+
+```text
+  GET /repos/find
+    ✔ Buscar repo - Nome não informado
+
+  GET /repos/find
+    ✔ Buscar repo - Nome informado
+
+  GET /repos/:repoId
+    ✔ Buscar repo - Id informado
 ```
 
 Para acessar a documentação do serviço, basta acessar o endereço [http://localhost:3000/docs](http://localhost:3000/docs) no navegador.
