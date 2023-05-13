@@ -1,0 +1,251 @@
+openapi: 3.0.3
+
+info:
+  title: TDSoft 2023 - API
+  description: Descrição da nossa API
+  version: 0.1.0
+
+servers:
+  - url: http://localhost:3000
+    description: Servidor de teste
+
+tags:
+  - name: Repositorios
+    description: Endpoints relacionados à repositórios
+
+paths:
+  /repos/find:
+    get:
+      summary: Permite a busca por repositorios cadastrados
+      description: Permite a busca por repositorios cadastrados
+      tags:
+        - Repositorios
+      parameters:
+        - name: nome
+          in: query
+          required: true
+          allowEmptyValue: false
+          example: react
+          schema:
+            type: string
+            minLength: 3
+        - name: pagina
+          in: query
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: por_pagina
+          in: query
+          schema:
+            type: integer
+            default: 10
+            minimum: 1
+            maximum: 25
+
+      responses:
+        "200":
+          description: busca reaizada com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/RepositorioSimplificado"
+        "400":
+          description: ocorreu um erro na busca
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensagem:
+                    type: string
+                    example: Nome é obrigatório
+
+  /repos/{repoId}:
+    get:
+      summary: obtém dados de um repositório específico
+      description: obtém dados de um repositório específico
+      tags:
+        - Repositorios
+      parameters:
+        - name: repoId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: MDEwOlJlcG9zaXRvcnkxMDI3MDI1MA==
+      responses:
+        "200":
+          description: repositório encontrado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Repositorio"
+
+components:
+  schemas:
+    RepositorioSimplificado:
+      type: object
+      properties:
+        id:
+          type: string
+          example: MDEwOlJlcG9zaXRvcnkxMDI3MDI1MA==
+        name:
+          type: string
+          example: facebook/react
+    Ator:
+      type: object
+      properties:
+        id:
+          type: string
+          example: MDEyOk9yZ2FuaXphdGlvbjY5NjMx
+        type:
+          type: string
+          example: Organization
+        login:
+          type: string
+          example: facebook
+        avatar_url:
+          type: string
+          example: https://avatars.githubusercontent.com/u/69631?v=4
+
+    Repositorio:
+      type: object
+      properties:
+        id:
+          type: string
+          example: MDEwOlJlcG9zaXRvcnkxMDI3MDI1MA==
+        assignable_users:
+          type: number
+          example: 171
+        code_of_conduct:
+          type: string
+          example: Contributor Covenant
+        created_at:
+          type: string
+          format: date-time
+          example: 2013-05-24T16:15:54.000Z
+        database_id:
+          type: number
+          example: 10270250
+        default_branch:
+          type: string
+          example: main
+        delete_branch_on_merge:
+          type: boolean
+        description:
+          type: string
+          example: The library for web and native user interfaces
+        disk_usage:
+          type: number
+          example: 308730
+        forks:
+          type: number
+          example: 42766
+        has_issues_enabled:
+          type: boolean
+        has_projects_enabled:
+          type: boolean
+        has_wiki_enabled:
+          type: boolean
+        homepage_url:
+          type: string
+          example: https://react.dev
+        is_archived:
+          type: boolean
+        is_blank_issues_enabled:
+          type: boolean
+        is_disabled:
+          type: boolean
+        is_empty:
+          type: boolean
+        is_fork:
+          type: boolean
+        is_in_organization:
+          type: boolean
+        is_locked:
+          type: boolean
+        is_mirror:
+          type: boolean
+        is_private:
+          type: boolean
+        is_security_policy_enabled:
+          type: boolean
+        is_template:
+          type: boolean
+        is_user_configuration_repository:
+          type: boolean
+        issues:
+          type: number
+          example: 12148
+        labels:
+          type: number
+          example: 66
+        languages:
+          type: string
+        license_info:
+          type: string
+          example: MIT License
+        mentionable_users:
+          type: number
+          example: 1702
+        merge_commit_allowed:
+          type: boolean
+        milestones:
+          type: number
+          example: 39
+        name:
+          type: string
+          example: react
+        name_with_owner:
+          type: string
+          example: facebook/react
+        open_graph_image_url:
+          type: string
+          example: https://opengraph.githubassets.com/5003264d05b1d6d7c9c3a5a1205a7e908ce8d99a274f9c641a8b693e7123cdef/facebook/react
+        owner:
+          type: object
+          oneOf:
+            - $ref: "#/components/schemas/Ator"
+        primary_language:
+          type: string
+          example: JavaScript
+        pushed_at:
+          type: string
+          format: date-time
+          example: 2023-04-06T21:27:03.000Z
+        pull_requests:
+          type: number
+          example: 13399
+        rebase_merge_allowed:
+          type: boolean
+        releases:
+          type: number
+          example: 99
+        repository_topics:
+          type: string
+        squash_merge_allowed:
+          type: boolean
+        stargazers:
+          type: number
+          example: 205389
+        tags:
+          type: number
+          example: 141
+        updated_at:
+          type: string
+          format: date-time
+          example: 2023-04-06T23:26:04.000Z
+        url:
+          type: string
+          example: https://github.com/facebook/react
+        uses_custom_open_graph_image:
+          type: boolean
+        vulnerability_alerts:
+          type: number
+          example: 0
+        watchers:
+          type: number
+          example: 6632
