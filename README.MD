@@ -1,5 +1,8 @@
 # Criação de um Serviço RESTful
 
+## Alunos
+- [Maycon Felipe Mota](https://github.com/felipegaleao)
+- [Vitor Oliveira](https://github.com/VitorORBrandao)
 ## 🎯 Objetivo
 
 O objetivo é colocar em prática os conhecimentos relacionados às definições de serviços web e suas aplicações.
