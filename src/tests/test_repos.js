@@ -18,10 +18,10 @@ var app = require('../server.js');
     describe('GET /repos/find', function() {
         it('Buscar repo - Nome informado', function(done) {
             request(app).get('/repos/find')
-            .query({ nome: 'facebook/react' })
+            .query({ nome: 'new-pac' })
             .end(function(err, res) {
                 assert.equal(res.statusCode, 200);
-                assert.equal(res.body.name, "facebook/react");
+                assert.equal(res.body.name, "new-pac");
                 done();
             });
         })});

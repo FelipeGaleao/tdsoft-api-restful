@@ -26,10 +26,10 @@ São essencialmente as definições feitas em sala de aula com a adição dos sc
 
 A atividade será avaliada seguindo os seguintes critérios:
 
-- [ ]  **60% da nota** será com base na implementação básica do serviço, ou seja, se ele apresenta o comportamento definido e esperado.
+- [X]  **60% da nota** será com base na implementação básica do serviço, ou seja, se ele apresenta o comportamento definido e esperado.
 - [ ]  **20%** será destinado a queles alunos que projetarem e implementarem o serviço usando dos conceitos do DDD (Domain Driven Design).
 - [ ]  **10%** será destinado à organização e qualidade do código do projeto do serviço.
-- [ ]  **10%** será atribuído a queles grupos que integrarem a documentação no serviço.
+- [X]  **10%** será atribuído a queles grupos que integrarem a documentação no serviço.
 
 ## 🆘 Como executar o projeto?
 
