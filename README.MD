@@ -6,8 +6,8 @@ O objetivo é colocar em prática os conhecimentos relacionados às definições
 
 Para isso deve ser feito a implementação do serviço com base nas definições feitas em sala de aula usando a ferramenta [Swagger](https://swagger.io). Basicamente, o serviço inicialmente irá consistir de dois endpoints principais:
 
-- [ ]  Busca de repositórios: Endpoint que permite a busca de repositórios pelo nome e os resultados são paginados.
-- [ ]  Obtenção de dados de um repositório: Endpoint que permite obter os dados de um determinado repositório.
+- [X]  Busca de repositórios: Endpoint que permite a busca de repositórios pelo nome e os resultados são paginados.
+- [X]  Obtenção de dados de um repositório: Endpoint que permite obter os dados de um determinado repositório.
 
 ## 🔪 Ferramentas
 
