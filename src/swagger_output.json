@@ -5,7 +5,7 @@
     "title": "Aplicação REST API - TDSOFT 0.0.1",
     "description": "O objetivo dessa aplicação é fornecer uma documentação integrada ao código fonte, para que seja possível visualizar os endpoints e seus respectivos parâmetros e respostas. \n "
   },
-  "host": "localhost:3000",
+  "host": "localhost:4000",
   "basePath": "/",
   "schemes": [
     "http"
@@ -29,6 +29,18 @@
             "description": "Nome do repositório",
             "in": "query",
             "type": "string"
+          },
+          {
+            "name": "pagina",
+            "description": "Número da página",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "por_pagina",
+            "description": "Quantidade de itens por página",
+            "in": "query",
+            "type": "integer"
           }
         ],
         "responses": {

@@ -14,17 +14,42 @@ var app = require('../server.js');
             });
         })});
 
-    // 200 - Informar o nome do repositório
+    // 200 - Buscar um único repositório
     describe('GET /repos/find', function() {
-        it('Buscar repo - Nome informado', function(done) {
+        it('Buscar repo - Sem qtde de páginas, sem limite por paginas', function(done) {
             request(app).get('/repos/find')
             .query({ nome: 'new-pac' })
             .end(function(err, res) {
                 assert.equal(res.statusCode, 200);
-                assert.equal(res.body.name, "new-pac");
+                assert.equal(res.body[0].name, "new-pac");
                 done();
             });
         })});
+
+   // 200 - Informar o nome do repositório
+       describe('GET /repos/find', function() {
+        it('Buscar repo - Buscar um único resultado', function(done) {
+            request(app).get('/repos/find')
+            .query({ nome: 'react'})
+            .end(function(err, res) {
+                assert.equal(res.statusCode, 200);
+                assert.equal(res.body.length, 1);
+                done();
+            });
+        })});
+
+    // 200 - Buscar por 10 repositórios
+    describe('GET /repos/find', function() {
+        it('Buscar repo - Buscar por 10 repositórios', function(done) {
+            request(app).get('/repos/find')
+            .query({ nome: 'react', por_pagina: 10 })
+            .end(function(err, res) {
+                assert.equal(res.statusCode, 200);
+                assert.equal(res.body.length, 10);
+                done();
+            });
+        })});  
+
 
 // Teste de integração para o endpoint /repos/:repoId
     // 200 - Informar o id do repositório
