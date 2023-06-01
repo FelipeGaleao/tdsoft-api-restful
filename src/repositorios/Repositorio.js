@@ -23,7 +23,7 @@ function searchRepository(nomeRepositorio, porPagina, quantidadeRepositorios ){
     }
 
     repositorios = repositorios.map(repo => {
-        let ator = atorRepository.getActorById(repo.owner);
+        let ator = atorRepository.getActorById(repo.owner.id);
         return new Repositorios(
             repo.id,
             repo.assignable_users,
@@ -79,8 +79,6 @@ function searchRepository(nomeRepositorio, porPagina, quantidadeRepositorios ){
     });
 
     return repositorios;
-    
-
 }
 
 function getById(idRepositorio){
