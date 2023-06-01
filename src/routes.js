@@ -21,7 +21,7 @@ router.get('/repos/find', (req, res) => {
       }
       return res.status(400).send(body)
     }
-    if(nomeRepositorio.length > 30){
+    if(nomeRepositorio.length > 15){
       body = {
         "mensagem": "O nome do repositório deve ter no máximo 30 caracteres"
       }
