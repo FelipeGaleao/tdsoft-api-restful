@@ -3,7 +3,7 @@ const atorRepository = require('../repositorios/Ator.js');
 const fs = require('fs');
 const data_repositories = JSON.parse(fs.readFileSync('src/data/repositories_202305081745.json', 'utf8'))
 
-function searchRepository(nomeRepositorio, porPagina, quantidadeRepositorios ){
+function searchRepository(nomeRepositorio, porPagina, quantidadeRepositorios){
     porPagina = porPagina ? porPagina : 1;
     quantidadeRepositorios = quantidadeRepositorios ? quantidadeRepositorios : 1;
     nomeRepositorio = nomeRepositorio.toLowerCase();
